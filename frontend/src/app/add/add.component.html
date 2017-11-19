@@ -1,0 +1,43 @@
+
+<h2 >
+    Cadastro de cliente
+</h2>
+
+  <div class="form-group">
+    <label class="control-label col-xs-1 col-sm-1 col-md-1 col-lg-1" for="nome">Nome</label>
+    <div class="col-xs-11 col-sm-11 col-md-11  col-lg-11">
+      <input [(ngModel)]="nome" type="text" placeholder="Ex: Claudio" class="form-control input-md" required="">
+    </div>
+  </div>
+  <div class="form-group">
+
+    <label class="control-label col-xs-1 col-sm-1 col-md-1 col-lg-1" for="telefone">Telefone</label>
+    <div class="col-xs-11 col-sm-11 col-md-11  col-lg-11">
+      <input [(ngModel)]="telefone" type="text" placeholder="Ex: 9999-9999" class="form-control input-md" required="">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-xs-1 col-sm-1 col-md-1 col-lg-1" for="endereco">Endereco</label>
+    <div class="col-xs-11 col-sm-11 col-md-11  col-lg-11">
+      <input [(ngModel)]="endereco" type="text" placeholder="Ex: Rua zzzzz" class="form-control input-md" required="">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-xs-1 col-sm-1 col-md-1 col-lg-1" for="email">Email</label>
+    <div class="col-xs-11 col-sm-11 col-md-11  col-lg-11">
+      <input [(ngModel)]="email" type="text" placeholder="Ex: email@email.com.br" class="form-control input-md" required="">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-xs-1 col-sm-1 col-md-1 col-lg-1" for="celular">Celular</label>
+    <div class="col-xs-11 col-sm-11 col-md-11  col-lg-11">
+      <input [(ngModel)]="celular" type="text" placeholder="Ex: 99999-9999" class="form-control input-md" required="">
+    </div>
+  </div>
+
+
+<a class="btn btn-success" href="/cad/cad-menu">Voltar</a>
+<button (click)="salvarAgenda()" (click)="sucess()" class="btn btn-success" data-dismiss="alert">Salvar</button>

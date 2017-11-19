@@ -1,0 +1,43 @@
+
+<h2 >
+    Cadastro de produto
+</h2>
+
+  <div class="form-group">
+    <label class="control-label col-xs-1 col-sm-1 col-md-1 col-lg-1" for="nome">Nome</label>
+    <div class="col-xs-11 col-sm-11 col-md-11  col-lg-11">
+      <input [(ngModel)]="nome" type="text" placeholder="Ex: Memoria Ram DDR-3 " class="form-control input-md" required="">
+    </div>
+  </div>
+  <div class="form-group">
+
+    <label class="control-label col-xs-1 col-sm-1 col-md-1 col-lg-1" for="tipo">Tipo/Descrição</label>
+    <div class="col-xs-11 col-sm-11 col-md-11  col-lg-11">
+      <input [(ngModel)]="tipo" type="text" placeholder="Ex: Periferico" class="form-control input-md" required="">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-xs-1 col-sm-1 col-md-1 col-lg-1" for="valor">Valor</label>
+    <div class="col-xs-11 col-sm-11 col-md-11  col-lg-11">
+      <input [(ngModel)]="valor" type="text" placeholder="Ex: 50.00" class="form-control input-md" required="">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-xs-1 col-sm-1 col-md-1 col-lg-1" for="quantidade">Quantidade</label>
+    <div class="col-xs-11 col-sm-11 col-md-11  col-lg-11">
+      <input [(ngModel)]="quantidade" type="text" placeholder="Ex: 5" class="form-control input-md" required="">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-xs-1 col-sm-1 col-md-1 col-lg-1" for="seila">Seila</label>
+    <div class="col-xs-11 col-sm-11 col-md-11  col-lg-11">
+      <input [(ngModel)]="seila" type="text" placeholder="Ex: 99999-9999" class="form-control input-md" required="">
+    </div>
+  </div>
+
+
+<a class="btn btn-success" href="/cad/cad-menu">Voltar</a>
+<button (click)="salvarProduto()" (click)="sucess()" class="btn btn-success" data-dismiss="alert">Salvar</button>

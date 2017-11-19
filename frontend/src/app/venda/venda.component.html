@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div class="container">
+  <h2>Selecione cliente</h2>
+
+  <table class="table table-hover">
+    <button type="button" class="btn btn-primary" (click)="openModal(cliente)">Procurar cliente</button>
+
+    <ng-template #cliente>
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover">
+        <tr>
+          <th>Nome</th>
+        </tr>
+        <tr *ngFor="let agenda of agendas">
+          <td>
+            {{agenda.nome}}
+          </td>
+            <button (click)="carregaUm(agenda.id)"  class=" btn-primary"></button>
+        </tr>
+      </table>
+      </div>
+    </ng-template>
+    <tr>
+
+<h2>Selecione Produto</h2>
+
+    <button type="button" class="btn btn-primary" (click)="openModal(produto)">Procurar produto</button>
+
+    <ng-template #produto>
+      <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-hover">
+          <h1>Produtos</h1>
+          <tr>
+            <td>
+            <b>Nome</b>
+            </td>
+            <td>
+              <b>Tipo</b>
+            </td>
+            <td>
+              <b>Valor</b>
+            </td>
+            <td>
+              <b>Qtd estoque</b>
+            </td>
+            <td>
+              <b>Seila</b>
+            </td>
+          </tr>
+
+          <tr *ngFor="let produto of produtos">
+
+            <td>
+              {{produto.nome}}
+            </td>
+            <td>
+              {{produto.tipo}}
+            </td>
+            <td>
+              {{produto.valor}}
+            </td>
+            <td>
+              {{produto.quantidade}}
+            </td>
+            <td>
+              {{produto.seila}}
+            </td>
+
+              <button (click)="carregaUm(agenda.id)"  class=" btn-primary"><a routerLink="/cad/novo">Listar</a></button>
+
+          </tr>
+      </table>
+      </div>
+    </ng-template>
+    </tr>
+
+    <tr><br>
+      <a class="btn btn-success" href="/menu">Voltar</a>
+    </tr>
+
+    
+      <tr *ngFor="let agenda of agendas">
+        <td>
+          {{agenda.nome}}
+        </td>
+      </tr>
+
+
+
+
+
+
+  </table>
+</div>
+
+</body>
+</html>

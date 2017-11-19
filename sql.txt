@@ -1,0 +1,22 @@
+create table contato(
+	id serial not null,
+    nome varchar(255),
+    telefone varchar(15),
+    endereco varchar(255),
+    email varchar(255),
+    celular varchar(15)   
+);
+
+create table produto(
+    id serial not null,
+    nome varchar(100),
+    tipo varchar(255),
+    valor varchar(100),
+    quantidade integer,
+    seila varchar(100)
+    );
+
+ select * from produto
+    
+    drop table produto
+    drop table contato

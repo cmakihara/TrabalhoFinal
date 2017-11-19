@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+
+<div class="jumbotron">
+  <h1>Cadastro</h1>
+  <nav class="navbar navbar-default">
+
+    <div class="container-fluid">
+
+      <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle collapsed" (click)="isCollapsed = !isCollapsed">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+      </div>
+
+      <div class="navbar-collapse collapse" [collapse]="isCollapsed">
+        <ul class="nav navbar-nav">
+          <li [ngClass]="{active: activeRoute('/menu')}"><a routerLink="/menu"><b> Menu Principal</b></a></li>
+          <li [ngClass]="{active: activeRoute('/cad/produto')}"><a routerLink="/cad/produto">Produto</a></li>
+          <li [ngClass]="{active: activeRoute('/cad/novo')}"><a routerLink="/cad/novo">Clente</a></li>
+          <li [ngClass]="{active: activeRoute('/cad/novo')}"><a routerLink="/cad/novo">Vendedor</a></li>
+
+        </ul>
+      </div>
+    </div>
+
+
+  </nav>
+</div>
+
+
+
+
+</body>
+</html>
