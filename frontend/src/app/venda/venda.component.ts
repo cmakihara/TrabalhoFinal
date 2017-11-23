@@ -33,13 +33,16 @@ export class VendaComponent implements OnInit {
 
    constructor(private agendaService: AgendaService ,private produtoService: ProdutoService , private modalService: BsModalService ) { }
 
-
+   testar: boolean = false;
    public ngOnInit() {
      this.carregaTodos();
      this.carregaTodosP();
    }
    public openModal(template: TemplateRef<any>) {
      this.modalRef = this.modalService.show(template);
+   }
+   test(){
+     this.testar =!this.testar;
    }
 
    sucess(){

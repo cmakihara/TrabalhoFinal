@@ -27,7 +27,7 @@
           <td>
             {{agenda.nome}}
           </td>
-            <button (click)="carregaUm(agenda.id)"  class=" btn-primary"></button>
+            <button (click)="carregaUm(agenda.id)" (click)="test()" class="close" class=" btn-primary">+</button>
         </tr>
       </table>
       </div>
@@ -93,13 +93,42 @@
       <a class="btn btn-success" href="/menu">Voltar</a>
     </tr>
 
-    
-      <tr *ngFor="let agenda of agendas">
-        <td>
-          {{agenda.nome}}
-        </td>
-      </tr>
+    <div *ngIf="testar">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+          
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Endereco</th>
+            <th>Email</th>
+            <th>Celular</th>
 
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let agenda of agendas">
+
+            <td>
+              {{agenda.nome}}
+            </td>
+            <td>
+              {{agenda.telefone}}
+            </td>
+            <td>
+              {{agenda.endereco}}
+            </td>
+            <td>
+              {{agenda.email}}
+            </td>
+            <td>
+              {{agenda.celular}}
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
 
 
