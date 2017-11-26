@@ -42,5 +42,9 @@ export class ProdutoService {
     return this.http.get(`${this.produtosUrl}`)
       .map((res: Response) => res.json());
   }
+  public loadUmProdutos(id: number): Observable<Produto[]> {
+    return this.http.get(`${this.produtosUrl}/${id}`)
+      .map((res: Response) => res.json());
+  }
 
 }

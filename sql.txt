@@ -16,7 +16,20 @@ create table produto(
     seila varchar(100)
     );
 
+create table usuario(
+    id serial not null,
+    nome varchar(255),
+    telefone varchar(15),
+    endereco varchar(255),
+    email varchar(255),
+    tipoUser varchar(15),
+    senha varchar(15)	 	
+
+);
+
+
  select * from produto
     
     drop table produto
     drop table contato
+    drop table usuario	

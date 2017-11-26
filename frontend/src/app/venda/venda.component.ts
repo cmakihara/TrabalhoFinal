@@ -31,9 +31,14 @@ export class VendaComponent implements OnInit {
    public quantidade = '';
    public seila = '';
 
+
+
+
+
    constructor(private agendaService: AgendaService ,private produtoService: ProdutoService , private modalService: BsModalService ) { }
 
    testar: boolean = false;
+   testar2: boolean = false;
    public ngOnInit() {
      this.carregaTodos();
      this.carregaTodosP();
@@ -44,42 +49,11 @@ export class VendaComponent implements OnInit {
    test(){
      this.testar =!this.testar;
    }
-
-   sucess(){
-     alert("Cadastro deletado");
-   }
-
-   public salvarAgenda(): void {
-     console.log('oi');
-
-     const agenda = new Agenda();
-     agenda.nome = this.nome;
-     agenda.telefone = this.telefone;
-     agenda.endereco = this.endereco;
-     agenda.email = this.email;
-     agenda.celular = this.celular;
-
-     this.agendaService.addAgenda(agenda)
-       .subscribe(res => {
-         console.log(res);
-         this.carregaTodos();
-       },
-       err => {
-         console.log(err);
-       });
+   test2(){
+     this.testar2 =!this.testar2;
 
    }
 
-   public apagarAgenda(id: number): void {
-     this.agendaService.removeAgenda(id)
-       .subscribe(res => {
-         console.log(res);
-         this.carregaTodos();
-       },
-       err => {
-         console.log(err);
-       });
-   }
 
    public carregaTodos(): void {
      this.agendaService.loadAgendas()
@@ -106,6 +80,17 @@ export class VendaComponent implements OnInit {
        .subscribe(res => {
          this.produtos = res;
          console.log('foi');
+       },
+       err => {
+         console.log(err);
+       });
+   }
+
+   public carregaUmProduto(id: number): void {
+     this.produtoService.loadUmProdutos(id)
+       .subscribe(res => {
+         this.produtos = res;
+         console.log('foiUm');
        },
        err => {
          console.log(err);

@@ -22,6 +22,10 @@ import { CadMenuComponent } from './cad-menu/cad-menu.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { ProdutoService } from './produto/produto.service';
 import { VendaComponent } from './venda/venda.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { UsuarioService } from './usuario/usuario.service';
+import { ApagarProdutoComponent }  from './apagar/apagarProduto.component'
+
 
 @NgModule({
   declarations: [
@@ -35,7 +39,9 @@ import { VendaComponent } from './venda/venda.component';
     InicialComponent,
     CadMenuComponent,
     ProdutoComponent,
-    VendaComponent
+    VendaComponent,
+    UsuarioComponent,
+    ApagarProdutoComponent,
   ],
 
   imports: [
@@ -50,7 +56,7 @@ import { VendaComponent } from './venda/venda.component';
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot()
   ],
-  providers: [AgendaService,ProdutoService],
+  providers: [AgendaService,ProdutoService,UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { CadMenuComponent } from './cad-menu/cad-menu.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { VendaComponent } from './venda/venda.component';
+import { UsuarioComponent } from './usuario/usuario.component';
+import { ApagarProdutoComponent }  from './apagar/apagarProduto.component'
 
 export const appRoutes: Routes = [
   { path: 'cad/novo', component: AddComponent },
@@ -19,6 +21,8 @@ export const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'cad/cad-menu', component: CadMenuComponent },
   { path: 'cad/produto', component: ProdutoComponent },
-  { path: 'cad/venda', component: VendaComponent }
+  { path: 'cad/venda', component: VendaComponent },
+  { path: 'cad/usuario', component: UsuarioComponent },
+  { path: 'cad/deleteproduto', component: ApagarProdutoComponent },
 
 ];

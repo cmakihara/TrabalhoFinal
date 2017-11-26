@@ -27,16 +27,16 @@
           <td>
             {{agenda.nome}}
           </td>
-            <button (click)="carregaUm(agenda.id)" (click)="test()" class="close" class=" btn-primary">+</button>
+            <button (click)="carregaUm(agenda.id)" (click)="test()" (click)="modalRef.hide()" class=" btn-primary">+</button>
         </tr>
       </table>
       </div>
     </ng-template>
     <tr>
 
-<h2>Selecione Produto</h2>
+<h2>Adcionar Produto</h2>
 
-    <button type="button" class="btn btn-primary" (click)="openModal(produto)">Procurar produto</button>
+    <button type="button" class="btn btn-primary" (click)="openModal(produto)">Adicionar produto</button>
 
     <ng-template #produto>
       <div class="modal-header">
@@ -81,7 +81,7 @@
               {{produto.seila}}
             </td>
 
-              <button (click)="carregaUm(agenda.id)"  class=" btn-primary"><a routerLink="/cad/novo">Listar</a></button>
+              <button (click)="carregaUmProduto(produto.id)" (click)="test2()" class=" btn-primary">+</button>
 
           </tr>
       </table>
@@ -96,8 +96,9 @@
     <div *ngIf="testar">
       <table class="table table-hover">
         <thead>
+          <H2>Cliente</H2>
           <tr>
-          
+
             <th>Nome</th>
             <th>Telefone</th>
             <th>Endereco</th>
@@ -130,6 +131,46 @@
       </table>
     </div>
 
+
+<div *ngIf="testar2">
+      <table class="table table-hover">
+        <thead>
+          <H2>Produto</H2>
+          <tr>
+
+            <th>Nome</th>
+            <th>tipo</th>
+            <th>valor </th>
+            <th>quantidade em estoque </th>
+            <th>codigo de barra </th>
+            <th>QTD levar </th>
+
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let produto of produtos">
+
+            <td>
+              {{produto.nome}}
+            </td>
+            <td>
+              {{produto.tipo}}
+            </td>
+            <td>
+              {{produto.valor}}
+            </td>
+            <td>
+              {{produto.quantidade}}
+            </td>
+            <td>
+              {{produto.seila}}
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+</div>
 
 
 
