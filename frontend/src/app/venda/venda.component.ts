@@ -37,8 +37,8 @@ export class VendaComponent implements OnInit {
 
    constructor(private agendaService: AgendaService ,private produtoService: ProdutoService , private modalService: BsModalService ) { }
 
-   testar: boolean = false;
-   testar2: boolean = false;
+   testar = 0;
+   testar2 = 0;
    public ngOnInit() {
      this.carregaTodos();
      this.carregaTodosP();
@@ -47,10 +47,10 @@ export class VendaComponent implements OnInit {
      this.modalRef = this.modalService.show(template);
    }
    test(){
-     this.testar =!this.testar;
+     this.testar =this.testar+1;
    }
    test2(){
-     this.testar2 =!this.testar2;
+     this.testar2 =this.testar+1;
 
    }
 
@@ -90,11 +90,17 @@ export class VendaComponent implements OnInit {
      this.produtoService.loadUmProdutos(id)
        .subscribe(res => {
          this.produtos = res;
-         console.log('foiUm');
+         console.log(res);
        },
        err => {
          console.log(err);
        });
+   }
+
+   public testPedido(id: number): void {
+     var oi = [id
+    ];
+    console.log(oi);
    }
 
 

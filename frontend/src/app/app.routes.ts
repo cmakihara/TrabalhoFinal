@@ -10,7 +10,9 @@ import { CadMenuComponent } from './cad-menu/cad-menu.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { VendaComponent } from './venda/venda.component';
 import { UsuarioComponent } from './usuario/usuario.component';
-import { ApagarProdutoComponent }  from './apagar/apagarProduto.component'
+import { ApagarProdutoComponent }  from './apagar/apagarProduto.component';
+import { PedidoComponent }  from './pedido/pedido.component';
+import { ApagarPedidoComponent }  from './apagar/apagarPedido.component';
 
 export const appRoutes: Routes = [
   { path: 'cad/novo', component: AddComponent },
@@ -24,5 +26,6 @@ export const appRoutes: Routes = [
   { path: 'cad/venda', component: VendaComponent },
   { path: 'cad/usuario', component: UsuarioComponent },
   { path: 'cad/deleteproduto', component: ApagarProdutoComponent },
-
+  { path: 'pedido', component: PedidoComponent },
+  { path: 'cad/deletepedido', component: ApagarPedidoComponent }, 
 ];
