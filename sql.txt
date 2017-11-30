@@ -27,6 +27,15 @@ create table usuario(
 
 );
 
+create table pedido (
+	id serial not null,
+	qtd_produto integer,
+	valor_total varchar(100),
+	contato_id_contato integer,
+	usuario_id_usuario integer 
+
+);
+
 
  select * from produto
     

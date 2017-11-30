@@ -81,7 +81,7 @@
               {{produto.seila}}
             </td>
 
-              <button (click)="testPedido(produto.id)" (click)="test2()" class=" btn-primary">+</button>
+              <button (click)="testPedido(produto)" (click)="test2()" class=" btn-primary">+</button>
 
           </tr>
       </table>
@@ -142,20 +142,40 @@
             <th>tipo</th>
             <th>valor </th>
             <th>quantidade em estoque </th>
-            <th>codigo de barra </th>
             <th>QTD levar </th>
 
 
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let e of oi">
+          <tr *ngFor="let produto of listaProduto">
+
 
             <td>
-              {{e.oi}}
+              {{produto.nome}}
+            </td>
+            <td>
+              {{produto.tipo}}
+            </td>
+            <td>
+              {{produto.valor}}
+            </td>
+            <td>
+              {{produto.quantidade}}
             </td>
 
+            <div class="form-group">
+              <label class="control-label col-xs-1 col-sm-1 col-md-1 col-lg-1" for="qtd_produto">quantidade</label>
+              <div class="col-xs-11 col-sm-11 col-md-11  col-lg-11">
+                <input [(ngModel)]="qtd_produto" type="text"  placeholder=1 class="form-control input-md" required="">
+              </div>
+            </div>
+
+
           </tr>
+          <button (click)="salvarPedido()" (click)="sucess()" class="btn btn-success" data-dismiss="alert">Salvar</button>
+
+
         </tbody>
       </table>
 </div>

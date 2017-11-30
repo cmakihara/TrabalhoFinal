@@ -6,6 +6,8 @@ import { Produto } from '../produto/produto';
 import { TemplateRef } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
+import { PedidoService } from '../pedido/pedido.service';
+import { Pedido } from '../pedido/pedido';
 
 
 @Component({
@@ -31,11 +33,17 @@ export class VendaComponent implements OnInit {
    public quantidade = '';
    public seila = '';
 
+   public pedidos: Pedido[] = [];
+    public qtd_produto = '';
+    public valor_total = '';
+    public contato_id_contato = '';
+    public usuario_id_usuario = '';
+
+   listaProduto:object[] =[];
+   clienteId:string =""
 
 
-
-
-   constructor(private agendaService: AgendaService ,private produtoService: ProdutoService , private modalService: BsModalService ) { }
+   constructor(private agendaService: AgendaService ,private produtoService: ProdutoService , private modalService: BsModalService ,private pedidoService: PedidoService) { }
 
    testar = 0;
    testar2 = 0;
@@ -66,10 +74,12 @@ export class VendaComponent implements OnInit {
        });
    }
    public carregaUm(id: number): void {
+     let clienteId = id;
      this.agendaService.loadUmAgendas(id)
        .subscribe(res => {
          this.agendas = res;
-         console.log('foiUm');
+         console.log(id);
+
        },
        err => {
          console.log(err);
@@ -97,10 +107,29 @@ export class VendaComponent implements OnInit {
        });
    }
 
-   public testPedido(id: number): void {
-     var oi = [id
-    ];
-    console.log(oi);
+   public testPedido(produto): void {
+     this.listaProduto.push(produto);
+
+   }
+   public salvarPedido(): void {
+     console.log('oi');
+
+
+     const pedido = new Pedido();
+     pedido.qtd_produto = this.qtd_produto;
+     pedido.valor_total = 'this.valor_total';
+     pedido.contato_id_contato = "3";
+     pedido.usuario_id_usuario = '2';
+
+     this.pedidoService.addPedido(pedido)
+       .subscribe(res => {
+         console.log(res);
+
+       },
+       err => {
+         console.log(err);
+       });
+
    }
 
 

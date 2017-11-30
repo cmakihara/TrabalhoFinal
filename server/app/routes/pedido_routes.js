@@ -4,18 +4,18 @@ module.exports = function(app, pool) {
 
     pool.connect((err, client, release) => {
 
-      const nome = req.body.nome;
-      const tipo = req.body.tipo;
-      const valor = req.body.valor;
-      const quantidade = req.body.quantidade;
-      const seila = req.body.seila;
+      const qtd_produto = req.body.qtd_produto;
+      const valor_total = req.body.valor_total;
+      const contato_id_contato = req.body.contato_id_contato;
+      const usuario_id_usuario = req.body.usuario_id_usuario;
+
 
       if (err) {
         res.status(500);
         return console.error('Erro na conexão.', err.stack);
       }
 
-      client.query("INSERT INTO pedido(nome,tipo,valor,quantidade,seila) VALUES ($1,$2,$3,$4,$5)", [nome,tipo,valor,quantidade,seila], (err, item) => {
+      client.query("INSERT INTO pedido(qtd_produto,valor_total,contato_id_contato,usuario_id_usuario) VALUES ($1,$2,$3,$4)", [qtd_produto,valor_total,contato_id_contato,usuario_id_usuario], (err, item) => {
 
         release();
 
@@ -40,11 +40,10 @@ module.exports = function(app, pool) {
 
     pool.connect((err, client, release) => {
 
-      const nome = req.body.nome;
-      const tipo = req.body.tipo;
-      const valor = req.body.valor;
-      const quantidade = req.body.quantidade;
-      const seila = req.body.seila;
+      const qtd_produto = req.body.qtd_produto;
+      const valor_total = req.body.valor_total;
+      const contato_id_contato = req.body.contato_id_contato;
+      const usuario_id_usuario = req.body.usuario_id_usuario;
 
 
       if (err) {
@@ -79,11 +78,10 @@ module.exports = function(app, pool) {
 
     pool.connect((err, client, release) => {
 
-      const nome = req.body.nome;
-      const tipo = req.body.tipo;
-      const valor = req.body.valor;
-      const quantidade = req.body.quantidade;
-      const seila = req.body.seila;
+      const qtd_produto = req.body.qtd_produto;
+      const valor_total = req.body.valor_total;
+      const contato_id_contato = req.body.contato_id_contato;
+      const usuario_id_usuario = req.body.usuario_id_usuario;
 
 
       if (err) {
@@ -116,11 +114,10 @@ module.exports = function(app, pool) {
 
     pool.connect((err, client, release) => {
 
-      const nome = req.body.nome;
-      const tipo = req.body.tipo;
-      const valor = req.body.valor;
-      const quantidade = req.body.quantidade;
-      const seila = req.body.seila;
+      const qtd_produto = req.body.qtd_produto;
+      const valor_total = req.body.valor_total;
+      const contato_id_contato = req.body.contato_id_contato;
+      const usuario_id_usuario = req.body.usuario_id_usuario;
 
 
       if (err) {
