@@ -27,7 +27,7 @@
           <td>
             {{agenda.nome}}
           </td>
-            <button (click)="carregaUm(agenda.id)" (click)="test()" (click)="modalRef.hide()" class=" btn-primary">+</button>
+            <button (click)="carregaUm(agenda.id_contato)" (click)="test()" (click)="modalRef.hide()" class=" btn-primary">+</button>
         </tr>
       </table>
       </div>
@@ -108,22 +108,22 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let agenda of agendas">
+          <tr>
 
             <td>
-              {{agenda.nome}}
+              {{agendaSelected.nome}}
             </td>
             <td>
-              {{agenda.telefone}}
+              {{agendaSelected.telefone}}
             </td>
             <td>
-              {{agenda.endereco}}
+              {{agendaSelected.endereco}}
             </td>
             <td>
-              {{agenda.email}}
+              {{agendaSelected.email}}
             </td>
             <td>
-              {{agenda.celular}}
+              {{agendaSelected.celular}}
             </td>
 
           </tr>
@@ -173,7 +173,7 @@
 
 
           </tr>
-          <button (click)="salvarPedido()" (click)="sucess()" class="btn btn-success" data-dismiss="alert">Salvar</button>
+          <button (click)="salvarPedido()"  class="btn btn-success" data-dismiss="alert">Salvar</button>
 
 
         </tbody>

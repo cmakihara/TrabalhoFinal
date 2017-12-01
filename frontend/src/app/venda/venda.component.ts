@@ -40,7 +40,8 @@ export class VendaComponent implements OnInit {
     public usuario_id_usuario = '';
 
    listaProduto:object[] =[];
-   clienteId:string =""
+   clienteId:string ="";
+   agendaSelected: Agenda;
 
 
    constructor(private agendaService: AgendaService ,private produtoService: ProdutoService , private modalService: BsModalService ,private pedidoService: PedidoService) { }
@@ -50,6 +51,7 @@ export class VendaComponent implements OnInit {
    public ngOnInit() {
      this.carregaTodos();
      this.carregaTodosP();
+     this.agendaSelected = new Agenda();
    }
    public openModal(template: TemplateRef<any>) {
      this.modalRef = this.modalService.show(template);
@@ -77,7 +79,7 @@ export class VendaComponent implements OnInit {
      let clienteId = id;
      this.agendaService.loadUmAgendas(id)
        .subscribe(res => {
-         this.agendas = res;
+         this.agendaSelected = res;
          console.log(id);
 
        },
