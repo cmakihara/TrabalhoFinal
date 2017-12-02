@@ -27,14 +27,14 @@ export class ApagarPedidoComponent implements OnInit {
 
 
 
-   public apagarPedido(id: number): void {
-     this.pedidoService.removePedido(id)
+   public apagarPedido(id_pedido: number): void {
+     this.pedidoService.removePedido(id_pedido)
        .subscribe(res => {
          console.log(res);
          this.carregaTodos();
        },
        err => {
-         console.log(err);
+        this.carregaTodos();
        });
    }
 

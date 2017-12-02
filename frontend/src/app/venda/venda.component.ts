@@ -34,14 +34,15 @@ export class VendaComponent implements OnInit {
    public seila = '';
 
    public pedidos: Pedido[] = [];
-    public qtd_produto = '';
-    public valor_total = '';
-    public contato_id_contato = '';
-    public usuario_id_usuario = '';
+    public qtd_produto = 0;
+    public valor_total = 0;
+    public contato_id_contato = 0;
+    public usuario_id_usuario = 0;
 
    listaProduto:object[] =[];
    clienteId:string ="";
    agendaSelected: Agenda;
+   contadorProduto=0;
 
 
    constructor(private agendaService: AgendaService ,private produtoService: ProdutoService , private modalService: BsModalService ,private pedidoService: PedidoService) { }
@@ -110,7 +111,9 @@ export class VendaComponent implements OnInit {
    }
 
    public testPedido(produto): void {
+     this.contadorProduto += 1;
      this.listaProduto.push(produto);
+     console.log(this.contadorProduto);
 
    }
    public salvarPedido(): void {
@@ -118,10 +121,11 @@ export class VendaComponent implements OnInit {
 
 
      const pedido = new Pedido();
-     pedido.qtd_produto = this.qtd_produto;
-     pedido.valor_total = 'this.valor_total';
-     pedido.contato_id_contato = "3";
-     pedido.usuario_id_usuario = '2';
+     pedido.qtd_produto = this.contadorProduto;
+     pedido.valor_total = 1000;
+     pedido.contato_id_contato =3; 
+     pedido.usuario_id_usuario = 52;
+
 
      this.pedidoService.addPedido(pedido)
        .subscribe(res => {
@@ -129,7 +133,7 @@ export class VendaComponent implements OnInit {
 
        },
        err => {
-         console.log(err);
+
        });
 
    }

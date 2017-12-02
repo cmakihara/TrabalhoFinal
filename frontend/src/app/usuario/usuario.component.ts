@@ -14,7 +14,7 @@ export class UsuarioComponent implements OnInit {
    public telefone = '';
    public endereco = '';
    public email = '';
-   public tipoUser = '';
+   public tipoUser:any;
    public senha = '';
 
 

@@ -28,7 +28,7 @@
     <tbody>
       <tr *ngFor="let agenda of agendas">
         <td>
-          {{agenda.id}}
+          {{agenda.id_contato}}
         </td>
         <td>
           {{agenda.nome}}
@@ -45,7 +45,7 @@
         <td>
           {{agenda.celular}}
         </td>
-          <button (click)="apagarAgenda(agenda.id)" (click)="sucess()" class=" btn-danger">Apagar</button>
+          <button (click)="apagarAgenda(agenda.id_contato)" (click)="sucess()" class=" btn-danger">Apagar</button>
       </tr>
     </tbody>
   </table>

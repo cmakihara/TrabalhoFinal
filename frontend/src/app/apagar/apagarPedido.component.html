@@ -15,30 +15,35 @@
   <table class="table table-hover">
     <thead>
       <tr>
-        <th>Id</th>
-        <th>Nome</th>
-        <th>Telefone</th>
-        <th>Endereco</th>
-      
+        <th>Numero do pedido</th>
+        <th>Cliente</th>
+        <th>Vendedor</th>
+        <th>quantidade de produtos</th>
+        <th>Valor</th>
+
 
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let pedido of pedidos">
         <td>
+          {{pedido.id_pedido}}
+        </td>
+        <td>
+          {{pedido.contato.nome}}
+        </td>
+        <td>
+          {{pedido.usuario.nome}}
+        </td>
+
+        <td>
           {{pedido.qtd_produto}}
         </td>
         <td>
-          {{pedido.valor_total}}
-        </td>
-        <td>
-          {{pedido.contato_id_contato}}
-        </td>
-        <td>
-          {{pedido.usuario_id_usuario}}
+          nao implementado
         </td>
 
-          <button (click)="apagarProduto(produto.id)" (click)="sucess()" class=" btn-danger">Apagar</button>
+          <button (click)="apagarPedido(pedido.id_pedido)" (click)="sucess()" class=" btn-danger">Apagar</button>
       </tr>
     </tbody>
   </table>

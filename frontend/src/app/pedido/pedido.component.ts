@@ -11,10 +11,10 @@ export class PedidoComponent implements OnInit {
 
 
     public pedidos: Pedido[] = [];
-     public qtd_produto = '';
-     public valor_total = '';
-     public contato_id_contato = '';
-     public usuario_id_usuario = '';
+     public qtd_produto = 0;
+     public valor_total = 0;
+     public contato_id_contato = 0;
+     public usuario_id_usuario = 0;
 
 
    constructor(private pedidoService: PedidoService) { }

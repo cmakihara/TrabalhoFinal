@@ -17,17 +17,16 @@
       <tr>
         <th>Id</th>
         <th>Nome</th>
-        <th>Telefone</th>
-        <th>Endereco</th>
-        <th>Email</th>
-        <th>Celular</th>
+        <th>Tipo</th>
+        <th>Valor</th>
+        <th>Codigo de barra</th>
 
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let produto of produtos">
         <td>
-          {{produto.id}}
+          {{produto.id_produto}}
         </td>
         <td>
           {{produto.nome}}
@@ -38,13 +37,11 @@
         <td>
           {{produto.valor}}
         </td>
-        <td>
-          {{produto.quantidade}}
-        </td>
+
         <td>
           {{produto.seila}}
         </td>
-          <button (click)="apagarProduto(produto.id)" (click)="sucess()" class=" btn-danger">Apagar</button>
+          <button (click)="apagarProduto(produto.id_produto)" (click)="sucess()" class=" btn-danger">Apagar</button>
       </tr>
     </tbody>
   </table>

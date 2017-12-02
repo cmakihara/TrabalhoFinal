@@ -1,12 +1,12 @@
 create table contato(
-	id serial not null,
+	id_contato serial not null,
     nome varchar(255),
     telefone varchar(15),
     endereco varchar(255),
     email varchar(255),
-    celular varchar(15)   
+    celular varchar(15) ,
+	primary key(id_contato)  
 );
-
 create table produto(
     id serial not null,
     nome varchar(100),

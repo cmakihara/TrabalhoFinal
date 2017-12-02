@@ -27,14 +27,14 @@ export class ApagarProdutoComponent implements OnInit {
 
 
 
-   public apagarProduto(id: number): void {
-     this.produtoService.removeProduto(id)
+   public apagarProduto(id_produto: number): void {
+     this.produtoService.removeProduto(id_produto)
        .subscribe(res => {
          console.log(res);
          this.carregaTodos();
        },
        err => {
-         console.log(err);
+         this.carregaTodos();
        });
    }
 

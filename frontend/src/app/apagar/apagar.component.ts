@@ -46,14 +46,15 @@ export class ApagarComponent implements OnInit {
 
    }
 
-   public apagarAgenda(id: number): void {
-     this.agendaService.removeAgenda(id)
+   public apagarAgenda(id_contato: number): void {
+     this.agendaService.removeAgenda(id_contato)
        .subscribe(res => {
-         console.log(res);
          this.carregaTodos();
+         console.log(res);
+
        },
        err => {
-         console.log(err);
+         this.carregaTodos();
        });
    }
 
