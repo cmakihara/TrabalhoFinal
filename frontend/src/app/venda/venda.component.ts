@@ -8,6 +8,8 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 import { PedidoService } from '../pedido/pedido.service';
 import { Pedido } from '../pedido/pedido';
+import { ItemPedidoService } from '../item-pedido/item-pedido.service';
+import { ItemPedido } from '../item-pedido/item-pedido';
 
 
 @Component({
@@ -39,13 +41,17 @@ export class VendaComponent implements OnInit {
     public contato_id_contato = 0;
     public usuario_id_usuario = 0;
 
-   listaProduto:object[] =[];
+    public itempedidos: ItemPedido[] = [];
+
+     public pedido_id_pedido:0;
+
+   listaProduto:Produto[] =[];
    clienteId:string ="";
    agendaSelected: Agenda;
    contadorProduto=0;
 
 
-   constructor(private agendaService: AgendaService ,private produtoService: ProdutoService , private modalService: BsModalService ,private pedidoService: PedidoService) { }
+   constructor(private agendaService: AgendaService ,private produtoService: ProdutoService , private modalService: BsModalService ,private pedidoService: PedidoService,private itempedidoService: ItemPedidoService) { }
 
    testar = 0;
    testar2 = 0;
@@ -113,17 +119,16 @@ export class VendaComponent implements OnInit {
    public testPedido(produto): void {
      this.contadorProduto += 1;
      this.listaProduto.push(produto);
-     console.log(this.contadorProduto);
+
 
    }
    public salvarPedido(): void {
-     console.log('oi');
 
-
+     console.log('salvar pedido');
      const pedido = new Pedido();
      pedido.qtd_produto = this.contadorProduto;
      pedido.valor_total = 1000;
-     pedido.contato_id_contato =3; 
+     pedido.contato_id_contato =3;
      pedido.usuario_id_usuario = 52;
 
 
@@ -135,7 +140,46 @@ export class VendaComponent implements OnInit {
        err => {
 
        });
+       this.salvarItempedido(this.carregaTodosPed());
 
+   }
+   public salvarItempedido(res): void{
+     console.log(this.listaProduto[0].nome);
+     console.log(res);
+
+     for (let i = 0; i < this.listaProduto.length; i++) {
+       const itempedido = new ItemPedido();
+       itempedido.nome = this.listaProduto[i].nome;
+       itempedido.tipo = this.listaProduto[i].tipo;
+       itempedido.quantidade =1
+       itempedido.valor =this.listaProduto[i].valor;
+       itempedido.seila = this.listaProduto[i].seila;
+       itempedido.pedido_id_pedido=2
+
+
+       this.itempedidoService.addItemPedido(itempedido)
+         .subscribe(res => {
+           console.log(res);
+
+         },
+         err => {
+
+         });
+     }
+
+
+   }
+   public carregaTodosPed(): any {
+     this.pedidoService.loadPedidos()
+       .subscribe(res => {
+         this.pedidos = res;
+         console.log('foi');
+         return res
+       },
+       err => {
+         console.log('err');
+
+       });
    }
 
 

@@ -1,18 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { PedidoService } from '../pedido/pedido.service';
-import { Pedido } from '../pedido/pedido';
 import { ItemPedidoService } from '../item-pedido/item-pedido.service';
 import { ItemPedido } from '../item-pedido/item-pedido';
 import { TemplateRef } from '@angular/core';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/modal-options.class';
 
-
 @Component({
-  selector: 'app-apagarPedido',
-  templateUrl: 'apagarPedido.component.html',
+  selector: 'app-item-pedido',
+  templateUrl: './item-pedido.component.html',
+
 })
-export class ApagarPedidoComponent implements OnInit {
+export class ItemPedidoComponent implements OnInit {
   title = 'app';
   public modalRef: BsModalRef;
 
@@ -24,50 +22,42 @@ export class ApagarPedidoComponent implements OnInit {
    public seila = '';
    public pedido_id_pedido:0;
 
-  public pedidos: Pedido[] = [];
-   public qtd_produto = '';
-   public valor_total = '';
-   public contato_id_contato = '';
-   public usuario_id_usuario = '';
-
-
-   constructor(private pedidoService: PedidoService,private itempedidoService: ItemPedidoService,private modalService: BsModalService) { }
+   constructor(private itempedidoService: ItemPedidoService,private modalService: BsModalService ) { }
 
    public ngOnInit() {
-     this.carregaTodos();
-   }
 
-   sucess(){
-     alert("Cadastro deletado");
    }
    public openModal(template: TemplateRef<any>) {
      this.modalRef = this.modalService.show(template);
    }
+   sucess(){
+     alert("Cadastro salvo");
 
-
-
-   public apagarPedido(id_pedido: number): void {
-     this.pedidoService.removePedido(id_pedido)
-       .subscribe(res => {
-         console.log(res);
-         this.carregaTodos();
-       },
-       err => {
-        this.carregaTodos();
-       });
    }
 
-   public carregaTodos(): void {
-     this.pedidoService.loadPedidos()
+
+   public salvarItemPedido(): void {
+     console.log('oi');
+
+     const itempedido = new ItemPedido();
+     itempedido.nome = this.nome;
+     itempedido.tipo = this.tipo;
+     itempedido.valor = this.valor;
+     itempedido.quantidade = this.quantidade;
+     itempedido.seila = this.seila;
+     itempedido.pedido_id_pedido = this.pedido_id_pedido;
+
+     this.itempedidoService.addItemPedido(itempedido)
        .subscribe(res => {
-         this.pedidos = res;
-         console.log('foi');
+         console.log(res);
+
        },
        err => {
          console.log(err);
        });
+
    }
-   public carregaTodosItems(): void {
+   public carregaTodos(): void {
      this.itempedidoService.loadItemPedido()
        .subscribe(res => {
          this.itempedidos = res;
@@ -77,6 +67,8 @@ export class ApagarPedidoComponent implements OnInit {
          console.log(err);
        });
    }
+
+
 
 
 

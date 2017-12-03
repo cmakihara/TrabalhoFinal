@@ -28,6 +28,8 @@ import { ApagarProdutoComponent }  from './apagar/apagarProduto.component';
 import { PedidoComponent } from './pedido/pedido.component'
 import { PedidoService } from './pedido/pedido.service';
 import { ApagarPedidoComponent }  from './apagar/apagarPedido.component';
+import { ItemPedidoComponent } from './item-pedido/item-pedido.component';
+import { ItemPedidoService } from './item-pedido/item-pedido.service';
 
 @NgModule({
   declarations: [
@@ -46,6 +48,7 @@ import { ApagarPedidoComponent }  from './apagar/apagarPedido.component';
     ApagarProdutoComponent,
     PedidoComponent,
     ApagarPedidoComponent,
+    ItemPedidoComponent,
   ],
 
   imports: [
@@ -60,7 +63,7 @@ import { ApagarPedidoComponent }  from './apagar/apagarPedido.component';
     BsDropdownModule.forRoot(),
     CollapseModule.forRoot()
   ],
-  providers: [AgendaService,ProdutoService,UsuarioService,PedidoService],
+  providers: [AgendaService,ProdutoService,UsuarioService,PedidoService,ItemPedidoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -44,10 +44,65 @@
         </td>
 
           <button (click)="apagarPedido(pedido.id_pedido)" (click)="sucess()" class=" btn-danger">Apagar</button>
+
+
+          <button type="button" class="btn btn-primary" (click)="carregaTodosItems()"  (click)="openModal(itempedido)">Item pedido</button>
+
+          <ng-template #itempedido>
+            <div class="modal-header">
+              <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table table-hover">
+                <h1>Item do pedido</h1>
+                <tr>
+
+                  <td>
+                    <b>Produto</b>
+                  </td>
+                  <td>
+                    <b>tipo</b>
+                  </td>
+                  <td>
+                    <b>valr </b>
+                  </td>
+                  <td>
+                    <b>quantidade</b>
+                  </td>
+                  <td>
+                    <b>codigo</b>
+                  </td>
+                </tr>
+
+                <tr *ngFor="let itempedido of itempedidos">
+
+
+                  <td>
+                    {{itempedido.nome}}
+                  </td>
+                  <td>
+                    {{itempedido.tipo}}
+                  </td>
+                  <td>
+                    {{itempedido.valor}}
+                  </td>
+                  <td>
+                    {{itempedido.quantidade}}
+                  </td>
+                  <td>
+                    {{itempedido.seila}}
+                  </td>
+                </tr>
+            </table>
+            </div>
+          </ng-template>
+
       </tr>
     </tbody>
   </table>
+
 </div>
+
 
 </body>
 </html>

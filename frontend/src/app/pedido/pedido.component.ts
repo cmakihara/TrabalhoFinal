@@ -28,6 +28,7 @@ export class PedidoComponent implements OnInit {
    }
 
 
+
    public salvarPedido(): void {
      console.log('oi');
 
