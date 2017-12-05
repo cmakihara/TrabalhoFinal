@@ -34,7 +34,7 @@
     </ng-template>
     <tr>
 
-<h2>Adcionar Produto</h2>
+<h2>Adicionar Produto</h2>
 
     <button type="button" class="btn btn-primary" (click)="carregaTodosP()"  (click)="openModal(produto)">Adicionar produto</button>
 
@@ -141,7 +141,7 @@
             <th>Nome</th>
             <th>tipo</th>
             <th>valor </th>
-            <th>QTD levar </th>
+            <th>Codigo de barra </th>
 
 
           </tr>
@@ -166,7 +166,7 @@
 
 
           </tr>
-          <button (click)="salvarPedido()"  class="btn btn-success" data-dismiss="alert">Salvar</button>
+          <button onclick="document.location.reload(true)" (click)="salvarPedido()" (click)="ok()"  class="btn btn-success" data-dismiss="alert" >Salvar</button>
 
 
         </tbody>

@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
 <form>
   <div class="form-group">
     <label for="nome">Nome:</label>
@@ -9,5 +18,49 @@
   </div>
 
   <a class="btn btn-success" href="/menu">Entrar</a>
-
 </form>
+
+<div class="container">
+  <h2>Listagem</h2>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Endereco</th>
+        <th>Email</th>
+        <th>Celular</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+
+        <td>
+          {{usuario.nome}}
+        </td>
+        <td>
+          {{usuario.telefone}}
+        </td>
+        <td>
+          {{usuario.endereco}}
+        </td>
+        <td>
+          {{usuario.email}}
+        </td>
+        <td>
+          {{usuario.tipoUser}}
+        </td>
+        <td>
+          {{usuario.senha}}
+        </td>
+          <button (click)="apagarAgenda(agenda.id_contato)" (click)="sucess()" class=" btn-danger">Apagar</button>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+</html>

@@ -46,7 +46,7 @@
           <button (click)="apagarPedido(pedido.id_pedido)" (click)="sucess()" class=" btn-danger">Apagar</button>
 
 
-          <button type="button" class="btn btn-primary" (click)="carregaTodosItems()"  (click)="openModal(itempedido)">Item pedido</button>
+          <button type="button" class="btn btn-primary" (click)="carregaTodosItemsPed(pedido.id_pedido)"  (click)="openModal(itempedido)">Item pedido</button>
 
           <ng-template #itempedido>
             <div class="modal-header">

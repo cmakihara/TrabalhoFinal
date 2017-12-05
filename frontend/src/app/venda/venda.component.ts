@@ -71,6 +71,13 @@ export class VendaComponent implements OnInit {
      this.testar2 =this.testar+1;
 
    }
+   ok(){
+
+       alert("Venda registrada");
+
+
+
+   }
 
 
    public carregaTodos(): void {
