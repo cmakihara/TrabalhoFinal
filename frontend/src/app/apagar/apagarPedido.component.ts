@@ -77,7 +77,16 @@ export class ApagarPedidoComponent implements OnInit {
          console.log(err);
        });
    }
-
+   public carregaTodosItemsPed(id_pedido:number): void {
+     this.itempedidoService.loadUmItemPedido(id_pedido)
+       .subscribe(res => {
+         this.itempedidos = res;
+         console.log('itemPedido');
+       },
+       err => {
+         console.log(err);
+       });
+   }
 
 
   }

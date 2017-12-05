@@ -38,8 +38,8 @@ export class VendaComponent implements OnInit {
    public pedidos: Pedido[] = [];
     public qtd_produto = 0;
     public valor_total = 0;
-    public contato_id_contato = 0;
-    public usuario_id_usuario = 0;
+    public contato = '';
+    public usuario = '';
 
     public itempedidos: ItemPedido[] = [];
 
@@ -49,6 +49,7 @@ export class VendaComponent implements OnInit {
    clienteId:string ="";
    agendaSelected: Agenda;
    contadorProduto=0;
+   total = 0
 
 
    constructor(private agendaService: AgendaService ,private produtoService: ProdutoService , private modalService: BsModalService ,private pedidoService: PedidoService,private itempedidoService: ItemPedidoService) { }
@@ -119,17 +120,22 @@ export class VendaComponent implements OnInit {
    public testPedido(produto): void {
      this.contadorProduto += 1;
      this.listaProduto.push(produto);
+     this.total = 0
+      for (let i = 0; i < this.listaProduto.length; i++) {
+        this.total += parseInt(this.listaProduto[i].valor)
+      }
+
 
 
    }
    public salvarPedido(): void {
 
-     console.log('salvar pedido');
+     console.log('salvar pedido'+this.total);
      const pedido = new Pedido();
      pedido.qtd_produto = this.contadorProduto;
-     pedido.valor_total = 1000;
-     pedido.contato_id_contato =3;
-     pedido.usuario_id_usuario = 52;
+     pedido.valor_total = this.total;
+     pedido.contato =this.agendaSelected.nome;
+     pedido.usuario = 'vendedor';
 
 
      this.pedidoService.addPedido(pedido)

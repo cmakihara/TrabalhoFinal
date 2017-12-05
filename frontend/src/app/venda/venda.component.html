@@ -141,7 +141,6 @@
             <th>Nome</th>
             <th>tipo</th>
             <th>valor </th>
-            <th>quantidade em estoque </th>
             <th>QTD levar </th>
 
 
@@ -161,15 +160,9 @@
               {{produto.valor}}
             </td>
             <td>
-              {{produto.quantidade}}
+              {{produto.seila}}
             </td>
 
-            <div class="form-group">
-              <label class="control-label col-xs-1 col-sm-1 col-md-1 col-lg-1" for="qtd_produto">quantidade</label>
-              <div class="col-xs-11 col-sm-11 col-md-11  col-lg-11">
-                <input [(ngModel)]="qtd_produto" type="text"  placeholder=1 class="form-control input-md" required="">
-              </div>
-            </div>
 
 
           </tr>

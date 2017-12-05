@@ -13,8 +13,8 @@ export class PedidoComponent implements OnInit {
     public pedidos: Pedido[] = [];
      public qtd_produto = 0;
      public valor_total = 0;
-     public contato_id_contato = 0;
-     public usuario_id_usuario = 0;
+     public contato ='';
+     public usuario = '';
 
 
    constructor(private pedidoService: PedidoService) { }
@@ -35,8 +35,8 @@ export class PedidoComponent implements OnInit {
      const pedido = new Pedido();
      pedido.qtd_produto = this.qtd_produto;
      pedido.valor_total = this.valor_total;
-     pedido.contato_id_contato = this.contato_id_contato;
-     pedido.usuario_id_usuario = this.usuario_id_usuario;
+     pedido.contato = this.contato;
+     pedido.usuario = this.usuario;
 
 
 

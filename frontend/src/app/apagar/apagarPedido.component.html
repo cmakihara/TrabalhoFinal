@@ -30,17 +30,17 @@
           {{pedido.id_pedido}}
         </td>
         <td>
-          {{pedido.contato.nome}}
+          {{pedido.contato}}
         </td>
         <td>
-          {{pedido.usuario.nome}}
+          {{pedido.usuario}}
         </td>
 
         <td>
           {{pedido.qtd_produto}}
         </td>
         <td>
-          nao implementado
+          R$ {{pedido.valor_total}}
         </td>
 
           <button (click)="apagarPedido(pedido.id_pedido)" (click)="sucess()" class=" btn-danger">Apagar</button>
