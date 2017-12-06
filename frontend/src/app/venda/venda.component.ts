@@ -129,7 +129,7 @@ export class VendaComponent implements OnInit {
      this.listaProduto.push(produto);
      this.total = 0
       for (let i = 0; i < this.listaProduto.length; i++) {
-        this.total += parseInt(this.listaProduto[i].valor)
+        this.total += parseFloat(this.listaProduto[i].valor)
       }
 
 
