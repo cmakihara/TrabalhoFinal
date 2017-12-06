@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 
-  
+
 
 
 
@@ -38,7 +38,7 @@
 
 
   <div class="form-group">
-    <label class="control-label col-xs-1 col-sm-1 col-md-1 col-lg-1" for="seila">Seila</label>
+    <label class="control-label col-xs-1 col-sm-1 col-md-1 col-lg-1" for="seila">Codigo de barra</label>
     <div class="col-xs-11 col-sm-11 col-md-11  col-lg-11">
       <input [(ngModel)]="seila" type="text" placeholder="Ex: 99999-9999" class="form-control input-md" required="">
       <br>
@@ -46,7 +46,7 @@
   </div>
 
 
-<a class="btn btn-success" href="/cad/cad-menu">Voltar</a>
-<button (click)="salvarProduto()" (click)="sucess()" class="btn btn-success" data-dismiss="alert">Salvar</button>
+<a class="btn btn-info" href="/cad/cad-menu">Voltar</a>
+<button (click)="salvarProduto()" onclick="document.location.reload(true)" (click)="sucess()" class="btn btn-success" data-dismiss="alert">Salvar</button>
 </body>
 </html>
